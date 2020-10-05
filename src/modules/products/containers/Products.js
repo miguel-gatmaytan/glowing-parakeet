@@ -14,11 +14,18 @@ import Container from 'components/Container';
 import { ProductItem } from '../components';
 import { getProducts, productsSelector } from '../';
 
+import { addItemsToCart } from 'modules/cart';
+
 export class Products extends Component {
   get productList() {
     return map(this.props.products, (product, i) => (
       <Grid.Column key={i}>
-        <ProductItem product={product} />
+        <ProductItem
+          product={product}
+          onAddToCart={(count, productId) => {
+            this.props.addItemsToCart(count, productId);
+          }}
+        />
       </Grid.Column>
     ));
   }
@@ -53,11 +60,13 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = {
   getProducts,
+  addItemsToCart
 };
 
 Products.propTypes = {
   getProducts: PropTypes.func.isRequired,
   products: PropTypes.array,
+  addItemsToCart: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

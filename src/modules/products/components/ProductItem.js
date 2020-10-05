@@ -57,7 +57,15 @@ export const ProductItem = (props) => {
             <Icon name="plus" />
           </a>
         </div>
-        <Button style={{ float: 'right' }}>ADD TO CART</Button>
+        <Button
+          style={{ float: 'right' }}
+          onClick={() => {
+            setCount(0);
+            props.onAddToCart(count, productItem.id);
+          }}
+        >
+          ADD TO CART
+        </Button>
       </Card.Content>
     </Card>
   );
@@ -65,6 +73,7 @@ export const ProductItem = (props) => {
 
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
 export default ProductItem;
