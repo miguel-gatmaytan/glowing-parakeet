@@ -2,35 +2,38 @@ import React, { Component } from 'react';
 
 import Logo from 'components/Logo';
 import Button from 'components/Button';
-import History from 'util/history';
-import Container from 'components/Container';
 import { MainHeader, SmallHeader } from 'components/headers';
 
-export class LandingPage extends Component {
-  onClassicButtonClick = () => History.push('/classic');
+import History from 'util/history';
 
-  onInteractiveButtonClick = () => History.push('/interactive');
+import Container from 'components/Container';
+import CallToActionBox from './components/CallToActionBox';
+
+export class LandingPage extends Component {
+  onShopNowButtonClick = () => History.push('/products');
 
   render() {
     return (
-      <Container style={{ width: 'auto' }}>
-        <Logo />
-        <MainHeader style={{ margin: 0, height: 50 }}>
-          Hello, my name is Miguel.
-        </MainHeader>
-        <SmallHeader style={{ margin: 0, marginBottom: 25 }}>
-          Please select an experience.
-        </SmallHeader>
-        <Button onClick={this.onClassicButtonClick} style={{ marginRight: 25 }}>
-          CLASSIC
-        </Button>
-        <Button onClick={this.onInteractiveButtonClick}>INTERACTIVE</Button>
+      <Container>
+        <CallToActionBox>
+          <Logo />
+          <MainHeader style={{ margin: 0, height: 50 }}>
+            Welcome to Glowing Parakeet.
+          </MainHeader>
+          <SmallHeader style={{ margin: 0, marginBottom: 25 }}>
+            We&apos;re glad you found us.
+          </SmallHeader>
+          <Button
+            onClick={this.onShopNowButtonClick}
+          >
+            SHOP NOW
+          </Button>
+        </CallToActionBox>
       </Container>
     );
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 }
 
 export default LandingPage;

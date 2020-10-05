@@ -6,15 +6,15 @@ import History from 'util/history';
 import LandingPage from 'modules/landing-page';
 import Products from 'modules/products/containers';
 
-import Overlay from './components/Overlay';
+import TopBar from './components/TopBar';
 import AppContainer from './components/AppContainer';
 
 import store from '../store';
 
 export const App = () => (
   <Provider store={store}>
+    <TopBar />
     <AppContainer>
-      <Overlay />
       <Router history={History}>
         <Switch>
           <Route path="/products" component={Products} />

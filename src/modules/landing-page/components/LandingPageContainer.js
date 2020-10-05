@@ -1,15 +1,13 @@
 import styled from 'styled-components';
+import BACKGROUND from 'assets/img/background.jpg';
 
 export const LandingPageContainer = styled.div`
-  color: #f6f6f6;
-  text-align: center;
-  z-index: 1;
-  margin: auto;
+  width: 100%;
   height: 100%;
-  width: 30%;
-  padding: 15% 0px;
-  transition: all 1s;
-  min-width: 300px;
+  margin: auto;
+  background-image: url(${BACKGROUND});
+  background-size: cover;
+  background-position-y: 50%;
 `;
 
 export default LandingPageContainer;

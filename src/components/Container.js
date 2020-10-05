@@ -1,15 +1,14 @@
 import styled from 'styled-components';
+import BACKGROUND from 'assets/img/background.jpg';
 
 export const Container = styled.div`
-  color: #f6f6f6;
-  text-align: center;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
   margin: auto;
-  height: calc(100% - 33vh);
-  width: 30%;
-  margin-top: 33vh;
-  transition: all 1s;
-  min-width: 300px;
+  background-image: url(${BACKGROUND});
+  background-size: cover;
+  background-position-y: 50%;
+  overflow: auto;
 `;
 
 export default Container;

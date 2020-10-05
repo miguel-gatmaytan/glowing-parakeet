@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const StyledButton = styled.a`
   /* This renders the buttons above... Edit me! */
-  background-color: black;
-  border: 1px solid white;
+  background-color: white;
+  border: 1px solid black;
   opacity: 0.6;
   -webkit-letter-spacing: 2px;
   -moz-letter-spacing: 2px;
@@ -14,12 +14,12 @@ const StyledButton = styled.a`
   margin: auto;
   margin-top: 15px;
   cursor: pointer;
-  color: white;
-  padding: 15px 20px 5px;
+  color: black;
+  padding: 10px 20px 10px;
   display: inline-block;
   &:hover {
     opacity: 1;
-    color: white;
+    color: black;
   }
   &:focus {
     opacity: 1;

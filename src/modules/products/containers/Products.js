@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import { Grid } from 'semantic-ui-react';
+
+import Container from 'components/Container';
+
 import { ProductItem } from '../components';
 import { getProducts, productsSelector } from '../';
 
@@ -17,9 +19,11 @@ export class Products extends Component {
   }
   render() {
     return (
-      <Grid container columns={4}>
-        {this.productList}
-      </Grid>
+      <Container style={{paddingTop: 25}}>
+        <Grid container columns={4}>
+          {this.productList}
+        </Grid>
+      </Container>
     );
   }
 
