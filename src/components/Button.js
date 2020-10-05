@@ -12,7 +12,6 @@ const StyledButton = styled.a`
   letter-spacing: 2px;
   width: auto;
   margin: auto;
-  margin-top: 15px;
   cursor: pointer;
   color: black;
   padding: 10px 20px 10px;

@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Grid } from 'semantic-ui-react';
+import {
+  Grid,
+  Container as SemanticContainer,
+  Breadcrumb,
+} from 'semantic-ui-react';
 
+import Logo from 'components/Logo';
 import Container from 'components/Container';
 
 import { ProductItem } from '../components';
@@ -19,7 +24,18 @@ export class Products extends Component {
   }
   render() {
     return (
-      <Container style={{paddingTop: 25}}>
+      <Container style={{ paddingTop: 25, paddingBottom: 25 }}>
+        <SemanticContainer style={{ textAlign: 'center', marginBottom: 50 }}>
+          <Logo />
+          <br />
+          <Breadcrumb>
+            <Breadcrumb.Section>
+              <a href="/">Home</a>
+            </Breadcrumb.Section>
+            <Breadcrumb.Divider />
+            <Breadcrumb.Section active>Products</Breadcrumb.Section>
+          </Breadcrumb>
+        </SemanticContainer>
         <Grid container columns={4}>
           {this.productList}
         </Grid>

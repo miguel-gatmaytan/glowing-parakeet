@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Card, Icon } from 'semantic-ui-react';
 import { ProductItemEntity } from '../entities';
 
+import Button from 'components/Button';
+
 export const ProductItem = (props) => {
   const productItem = new ProductItemEntity(props.product);
   const [count, setCount] = useState(0);
@@ -17,9 +19,17 @@ export const ProductItem = (props) => {
         }}
       />
       <Card.Content>
-        <Card.Header style={{ height: 50 }}>{productItem.title}</Card.Header>
+        <Card.Header
+          style={{
+            height: 100,
+            fontSize: 15,
+          }}
+          title={productItem.title}
+        >
+          {productItem.title}
+        </Card.Header>
         <Card.Meta>
-          <span>{productItem.price}</span>
+          <span>$ {productItem.price}</span>
         </Card.Meta>
         <Card.Description
           style={{ maxHeight: 50, height: 50, overflow: 'auto' }}
@@ -28,21 +38,26 @@ export const ProductItem = (props) => {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a
-          onClick={() => {
-            setCount(count - 1);
-          }}
-        >
-          <Icon name="minus" />
-        </a>
-        {count}
-        <a
-          onClick={() => {
-            setCount(count + 1);
-          }}
-        >
-          <Icon name="plus" />
-        </a>
+        <div style={{ paddingTop: 10, float: 'left' }}>
+          <a
+            style={{ marginRight: 5 }}
+            onClick={() => {
+              setCount(count - 1);
+            }}
+          >
+            <Icon name="minus" />
+          </a>
+          <span>{count}</span>
+          <a
+            style={{ marginLeft: 5 }}
+            onClick={() => {
+              setCount(count + 1);
+            }}
+          >
+            <Icon name="plus" />
+          </a>
+        </div>
+        <Button style={{ float: 'right' }}>ADD TO CART</Button>
       </Card.Content>
     </Card>
   );
