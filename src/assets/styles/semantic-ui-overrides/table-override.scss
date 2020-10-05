@@ -1,0 +1,19 @@
+  //SEMANTIC UI OVERRIDES
+  .ui.table {
+    background: transparent;
+    color: white;
+    thead {
+      th {
+        background: transparent;
+        color: white;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 20px;
+      }
+    }
+    td {
+      text-align: center;
+    }
+  }
